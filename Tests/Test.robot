@@ -15,3 +15,14 @@ ${PASSWORD} =  Testing123
 
 Check the Index Page
        Indexpage.Index Page Check all
+
+Login Tests
+       Login.Login as Dutch User
+       Dashboard.Logout
+       Index.Verify page loaded NL
+       Login.Login as English User
+       Dashboard.Logout
+       Index.Verify page loaded EN
+       Login.Login as French User
+       Dashboard.Logout
+       Index.Verify page loaded FR

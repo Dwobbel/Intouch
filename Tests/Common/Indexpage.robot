@@ -26,3 +26,18 @@ Index Page Check all
     Index.Verify page loaded EN
     Index.Choose FR
     Index.Verify page loaded FR
+
+Login as Dutch User
+    Index.Load Index page
+    Index.Choose NL
+    Index.Login
+
+Login as English User
+    Index.Load Index page
+    Index.Choose EN
+    Index.Login
+
+Login as French User
+    Index.Load Index page
+    Index.Choose FR
+    Index.Login
