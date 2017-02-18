@@ -1,28 +1,28 @@
 *** Settings ***
-Resource  ../../Resources/PO/Login.robot
+Resource  ../../Resources/PO/Index.robot
 
 *** Keywords ***
 
 Index Page Dutch
-    Login.Load login page
-    Login.Choose NL
-    Login.Verify page loaded NL
+    Index.Load Index page
+    Index.Choose NL
+    Index.Verify page loaded NL
 
 Index Page English
-    Login.Load login page
-    Login.Choose EN
-    Login.Verify page loaded EN
+    Index.Load Index page
+    Index.Choose EN
+    Index.Verify page loaded EN
 
 Index Page French
-    Login.Load login page
-    Login.Choose FR
-    Login.Verify page loaded FR
+    Index.Load Index page
+    Index.Choose FR
+    Index.Verify page loaded FR
 
 Index Page Check all
-    Login.Load login page
-    Login.Choose NL
-    Login.Verify page loaded NL
-    Login.Choose EN
-    Login.Verify page loaded EN
-    Login.Choose FR
-    Login.Verify page loaded FR
+    Index.Load Index page
+    Index.Choose NL
+    Index.Verify page loaded NL
+    Index.Choose EN
+    Index.Verify page loaded EN
+    Index.Choose FR
+    Index.Verify page loaded FR

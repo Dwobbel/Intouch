@@ -3,7 +3,7 @@ Library  ExtendedSelenium2Library
 
 *** Keywords ***
 
-Load login page
+Load Index page
     Go To  ${START_URL}
 
 Verify page loaded NL

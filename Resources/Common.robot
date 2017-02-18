@@ -1,7 +1,7 @@
 *** Settings ***
 Library  ExtendedSelenium2Library
 
-Resource  ../Resources/PO/Login.robot
+Resource  ../Resources/PO/Index.robot
 Resource  ../Tests/Common/Indexpage.robot
 
 *** Keywords ***
