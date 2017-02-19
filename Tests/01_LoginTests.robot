@@ -13,3 +13,8 @@ ${PASSWORD} =  Testing123
 
 *** Test Cases ***
 
+Check the Index Page
+       Indexpage.Index Page Check all
+
+Login and Logout all languages
+       Login.Login and logout all languages
