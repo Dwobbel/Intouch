@@ -1,7 +1,6 @@
 *** Settings ***
 Library  ExtendedSelenium2Library
 
-
 *** Keywords ***
 Verify page loaded NL
     element should contain  id=btnlanguagelist  Nederlands
@@ -98,8 +97,28 @@ Verify page loaded FR
 Logout
      Click Link  xpath=//header/nav/div[2]/ul[1]/li[3]/a
 
-Chooose NL
+Open Language dropdown
+    click button  xpath=//*[@id="btnlanguagelist"]
+Close Language dropdown
+    click button  xpath=//*[@id="btnlanguagelist"]
 
+Choose NL
+    click link  xpath=//*[@id="btn_nl_be"]
 Choose EN
-
+    click link  xpath=//*[@id="btn_en_us"]
 Choose FR
+    click link  xpath=//*[@id="btn_fr_be"]
+
+Verify Language change within the application
+    Login.Login as English User
+    Dashboard.Open language dropdown
+    Dashboard.Close language dropdown
+    Dashboard.Open language dropdown
+    Dashboard.Choose NL
+    Dashboard.Verify page loaded NL
+    Dashboard.Open language dropdown
+    Dashboard.Choose EN
+    Dashboard.Verify page loaded EN
+    Dashboard.Open language dropdown
+    Dashboard.Choose FR
+    Dashboard.Verify page loaded FR

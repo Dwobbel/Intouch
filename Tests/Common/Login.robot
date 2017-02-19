@@ -38,3 +38,4 @@ Login and logout English
        Login.Login as English User
        Dashboard.Logout
        Index.Verify page loaded EN
+
