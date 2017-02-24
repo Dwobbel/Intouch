@@ -6,7 +6,7 @@ Resource  ../Tests/Common/Indexpage.robot
 Resource  ../Resources/PO/Dashboard.robot
 Resource  ../Tests/Common/Login.robot
 Resource  ../Resources/PO/Sidebar.robot
-
+Resource  ../Resources/API/GetCookie.robot
 *** Keywords ***
 
 Begin Web Test
