@@ -3,13 +3,6 @@ Library  RequestsLibrary
 Library  Collections
 Library  String
 
-#Test Setup  Begin Web Test
-#Test Teardown  End Web Test
-
-*** Variables ***
-
-
-
 *** Keywords ***
 
 GetCookie

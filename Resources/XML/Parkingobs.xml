@@ -1,0 +1,35 @@
+<observation>
+   <amount>2500</amount>
+   <articles class="java.util.ArrayList">
+      <article>
+         <id>1</id>
+      </article>
+   </articles>
+   <comments class="java.util.ArrayList"/>
+   <location>
+      <cityId>2</cityId>
+      <gpsCoordinate>
+         <latitude>50.9640978</latitude>
+         <longitude>5.4867528</longitude>
+      </gpsCoordinate>
+      <streetId>73</streetId>
+      <zoneId>1</zoneId>
+   </location>
+   <paymentReference>123456</paymentReference>
+   <reference>123456</reference>
+   <submitter>
+      <deviceDateTime>2017-02-14T13:54:09</deviceDateTime>
+      <deviceLanguage>nl_be</deviceLanguage>
+      <observerId>1007</observerId>
+   </submitter>
+   <timestamp>2017-02-14T13:54:09</timestamp>
+   <type>1</type>
+   <vehicle>
+      <brandId>5</brandId>
+      <colorId>5</colorId>
+      <licenseplate>1ABC123</licenseplate>
+      <modelId>9</modelId>
+      <nationalityId>13</nationalityId>
+      <typeId>35</typeId>
+   </vehicle>
+</observation>
