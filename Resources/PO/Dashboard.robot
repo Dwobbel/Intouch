@@ -3,15 +3,11 @@ Library  ExtendedSelenium2Library
 
 *** Keywords ***
 Verify page loaded NL
-    element should contain  id=btnlanguagelist  Nederlands
-    page should contain element  xpath=//small[text()='Welkom bij In Touch !']
-    page should contain element  xpath=//span[text()='Vaststellingen']
-    page should contain element  xpath=//span[text()='Opvolging']
-    page should contain element  xpath=//span[text()='Vergunningen']
-    page should contain element  xpath=//span[text()='Betalingen']
-    page should contain element  xpath=//span[text()='Aanvragers']
-    page should contain element  xpath=//span[text()='Statistieken']
-    page should contain element  xpath=//span[text()='Instellingen']
+    ExtendedSelenium2Library.element should contain  id=btnlanguagelist  Nederlands
+    ExtendedSelenium2Library.element text should be  id=dashboard_title  Start
+    ExtendedSelenium2Library.element text should be  id=dashboard_welcome  Welkom bij In Touch !
+    Sidebar.Check default sidebar
+
     page should contain element  xpath=//span[text()='Inspecteer afbeeldingen lpr']
     page should contain element  xpath=//span[text()='Personalia toevoegen (Parking)']
     page should contain element  xpath=//span[text()='Aanvragen tot annulatie']
@@ -98,16 +94,16 @@ Logout
      Click Link  xpath=//header/nav/div[2]/ul[1]/li[3]/a
 
 Open Language dropdown
-    click button  xpath=//*[@id="btnlanguagelist"]
+    click button  id=btnlanguagelist
 Close Language dropdown
-    click button  xpath=//*[@id="btnlanguagelist"]
+    click button  id=btnlanguagelist
 
 Choose NL
-    click link  xpath=//*[@id="btn_nl_be"]
+    click link  id=btn_nl_be
 Choose EN
-    click link  xpath=//*[@id="btn_en_us"]
+    click link  id=btn_en_us
 Choose FR
-    click link  xpath=//*[@id="btn_fr_be"]
+    click link  id=btn_fr_be
 
 Verify Language change within the application
     Login.Login as English User
@@ -122,3 +118,4 @@ Verify Language change within the application
     Dashboard.Open language dropdown
     Dashboard.Choose FR
     Dashboard.Verify page loaded FR
+

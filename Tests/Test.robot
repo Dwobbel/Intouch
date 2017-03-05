@@ -3,10 +3,9 @@ Resource  ../Resources/Common.robot
 Library  RequestsLibrary
 Library  Collections
 Library  String
-Library  XML
 
-#Test Setup  Begin Web Test
-#Test Teardown  End Web Test
+Test Setup  Begin Web Test
+Test Teardown  End Web Test
 
 *** Variables ***
 
@@ -21,8 +20,11 @@ ${XML}=  Resources/XML/Parkingobs.xml
 *** Test Cases ***
 
 Test1
-    Create Parking Observation
-
+    Login.Login As Dutch User
+    Sidebar.Open Observations - Parking
+    Observations - Parking.Check filters NL
+    Sidebar.Open Observations - Parking anti-social
+    Observations - Parking Anti-Social.Check filters NL
 
 
 

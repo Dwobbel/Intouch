@@ -10,68 +10,83 @@ Open Observations
     click link  id=menu_observations
 
 Check Observations NL
-
-    element should contain  xpath=/html/body/div[1]/aside  Controles
-    element should contain  xpath=/html/body/div[1]/aside  GAS parkeren
+    ExtendedSelenium2Library.element text should be  id=menu_observations  Vaststellingen
+    ExtendedSelenium2Library.element text should be  id=menu_observations_parking_retribution  Controles
+    ExtendedSelenium2Library.element text should be  id=menu_observations_parking_anti  GAS parkeren
 
 Open Fines
     click link  id=menu_fines
 
 Check Fines NL
-    element should contain  xpath=/html/body/div[1]/aside  Naheffingen
-    element should contain  xpath=/html/body/div[1]/aside  GAS
+    ExtendedSelenium2Library.element text should be  id=menu_fines  Opvolging
+    ExtendedSelenium2Library.element text should be  id=menu_fines_parking_retribution  Naheffingen
+    ExtendedSelenium2Library.element text should be  id=menu_fines_parking_anti  GAS parkeren
 
 Open Permits
     click link  id=menu_permits
 
 Check Permits NL
-    element should contain  xpath=/html/body/div[1]/aside  Parkeren
-    element should contain  xpath=/html/body/div[1]/aside  Doorgangsvergunning
+    ExtendedSelenium2Library.element text should be  id=menu_permits  Vergunningen
+    ExtendedSelenium2Library.element text should be  id=menu_permits_parking  Parkeren
+    ExtendedSelenium2Library.element text should be  id=menu_permits_transit  Doorgangsvergunning
 
 Open Payments
     click link  id=menu_payments
 
 Check Payments NL
-
-    element should contain  xpath=/html/body/div[1]/aside  Inkomend
-    element should contain  xpath=/html/body/div[1]/aside  Directe betalingen
-    element should contain  xpath=/html/body/div[1]/aside  Terugbetalingen
+    ExtendedSelenium2Library.element text should be  id=menu_payments  Betalingen
+    ExtendedSelenium2Library.element text should be  id=menu_payments_incoming  Inkomend
+    ExtendedSelenium2Library.element text should be  id=menu_payments_direct  Directe betalingen
+    ExtendedSelenium2Library.element text should be  id=menu_payments_refunds  Terugbetalingen
 
 Open Requesters
     click link  id=menu_requesters
 
 Check Requesters NL
-    element should contain  xpath=/html/body/div[1]/aside  Burgers
-    element should contain  xpath=/html/body/div[1]/aside  Bedrijven
+    ExtendedSelenium2Library.element text should be  id=menu_requesters  Aanvragers
+    ExtendedSelenium2Library.element text should be  id=menu_requesters_citizens  Burgers
+    ExtendedSelenium2Library.element text should be  id=menu_requesters_companies  Bedrijven
 
 Open Statistics
     click link  id=menu_statistics
 
 Check Statistics NL
-    element should contain  xpath=/html/body/div[1]/aside  Controles
-    element should contain  xpath=/html/body/div[1]/aside  Naheffingen
-    element should contain  xpath=/html/body/div[1]/aside  Vergunningen
+    ExtendedSelenium2Library.element text should be  id=menu_statistics  Statistieken
+    ExtendedSelenium2Library.element text should be  id=menu_statistics_observations  Controles
+    ExtendedSelenium2Library.element text should be  id=menu_statistics_financials  Naheffingen
+    ExtendedSelenium2Library.element text should be  id=menu_statistics_permits  Vergunningen
 
 Open Settings
     click link  id=menu_settings
 
 Check Settings NL
-    element should contain  xpath=/html/body/div[1]/aside  Naheffingen
-    element should contain  xpath=/html/body/div[1]/aside  Zones
-    element should contain  xpath=/html/body/div[1]/aside  Vergunningen
-    element should contain  xpath=/html/body/div[1]/aside  Vergunningszones
-    element should contain  xpath=/html/body/div[1]/aside  Geseinde voertuigen
-    element should contain  xpath=/html/body/div[1]/aside  Globaal
-    element should contain  xpath=/html/body/div[1]/aside  Taken uitvoeren
-    element should contain  xpath=/html/body/div[1]/aside  Functies uitvoeren
+    ExtendedSelenium2Library.element text should be  id=menu_settings  Instellingen
+    ExtendedSelenium2Library.element text should be  id=menu_settings_fines  Naheffingen
+    ExtendedSelenium2Library.element text should be  id=menu_settings_zone  Zones
+    ExtendedSelenium2Library.element text should be  id=menu_settings_permits  Vergunningen
+    ExtendedSelenium2Library.element text should be  id=menu_settings_permit_zone  Vergunningszones
+    ExtendedSelenium2Library.element text should be  id=menu_settings_reported_plates  Geseinde voertuigen
+    ExtendedSelenium2Library.element text should be  id=menu_settings_general  Globaal
+    ExtendedSelenium2Library.element text should be  id=menu_settings_schedulers  Taken uitvoeren
+    ExtendedSelenium2Library.element text should be  id=menu_settings_functions  Functies uitvoeren
+
+Check default sidebar
+    ExtendedSelenium2Library.element text should be  id=menu_dashboard  Start
+    ExtendedSelenium2Library.element text should be  id=menu_observations  Vaststellingen
+    ExtendedSelenium2Library.element text should be  id=menu_fines  Opvolging
+    ExtendedSelenium2Library.element text should be  id=menu_permits  Vergunningen
+    ExtendedSelenium2Library.element text should be  id=menu_payments  Betalingen
+    ExtendedSelenium2Library.element text should be  id=menu_requesters  Aanvragers
+    ExtendedSelenium2Library.element text should be  id=menu_statistics  Statistieken
+    ExtendedSelenium2Library.element text should be  id=menu_settings  Instellingen
 
 Open Global Settings
     Sidebar.Open Settings
     click link  id=menu_settings_general
 
 Check Global Settings NL
-    element should contain  xpath=/html/body/div[1]/aside  Gebruikers
-    element should contain  xpath=/html/body/div[1]/aside  Straten
+    ExtendedSelenium2Library.element text should be  id=menu_settings_general_user  Gebruikers
+    ExtendedSelenium2Library.element text should be  id=menu_settings_general_streets  Straten
 
 
 Check Sidebar NL
@@ -239,7 +254,9 @@ Open Settings - Functions
 Open everything from the sidebar
     Login.Login As Dutch User
     Sidebar.Open Observations - Parking
+    Sidebar.Verify Observations - Parking NL
     Sidebar.Open Observations - Parking anti-social
+    Sidebar.Verify Parking anti-social - Parking NL
     Sidebar.Open Fines - Retribution
     Sidebar.Open Fines - Anti-Social
     Sidebar.Open Permit - Parking
@@ -261,3 +278,12 @@ Open everything from the sidebar
     Sidebar.Open Settings - Global Settings - Streets
     Sidebar.Open Settings - Schedulers
     Sidebar.Open Settings - Functions
+
+Verify Observations - Parking NL
+    ExtendedSelenium2Library.element text should be  id=title  Controle
+    ExtendedSelenium2Library.element text should be  id=subtitle  Parkeren
+    page should contain element  id=filterObservationRetributionsPanel
+
+Verify Parking anti-social - Parking NL
+    ExtendedSelenium2Library.element text should be  id=title  Vaststellingen
+    ExtendedSelenium2Library.element text should be  id=subtitle  GAS Parkeren

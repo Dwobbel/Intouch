@@ -9,6 +9,8 @@ Resource  ../Resources/PO/Sidebar.robot
 Resource  ../Resources/API/GetCookie.robot
 Resource  ../Resources/API/REST.robot
 Resource  ../Resources/API/CreateParkingObs.robot
+Resource  ../Resources/PO/Observations - Parking Anti-Social.robot
+Resource  ../Resources/PO/Observations - Parking.robot
 
 *** Keywords ***
 
