@@ -11,6 +11,8 @@ Resource  ../Resources/API/REST.robot
 Resource  ../Resources/API/CreateParkingObs.robot
 Resource  ../Resources/PO/Observations - Parking Anti-Social.robot
 Resource  ../Resources/PO/Observations - Parking.robot
+Resource  ../Resources/PO/schedulers.robot
+Resource  ../Resources/PO/Database.robot
 
 *** Keywords ***
 
@@ -31,4 +33,4 @@ Generate License Plate
     ${numbers}=  generate random string  3  [NUMBERS]
     ${LP}=  catenate  SEPARATOR=  ${1}  ${letters}  ${numbers}
     set global variable  ${LicensePlate}  ${LP}
-
+    #BuiltIn.log To Console  \n License plate used: ${LicensePlate} \n

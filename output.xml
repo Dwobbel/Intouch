@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170605 16:39:16.088" generator="Robot 3.0.2 (Python 2.7.13 on win32)">
+<suite source="C:\development\robot-scripts\Intouch\Tests\DocGeneration.robot" id="s1" name="DocGeneration">
+<test id="s1-t1" name="Getdoctypes">
+<kw name="Checkdoctypes" library="Database">
+<kw name="Connect" library="Database">
+<kw name="Connect To Database" library="DatabaseLibrary">
+<doc>Loads the DB API 2.0 module given `dbapiModuleName` then uses it to</doc>
+<arguments>
+<arg>psycopg2</arg>
+<arg>${DB_NAME}</arg>
+<arg>${DB_USER_NAME}</arg>
+<arg>${DB_USER_PASSWORD}</arg>
+<arg>${DB_HOST}</arg>
+<arg>${DB_PORT}</arg>
+</arguments>
+<status status="PASS" endtime="20170605 16:39:16.823" starttime="20170605 16:39:16.375"></status>
+</kw>
+<status status="PASS" endtime="20170605 16:39:16.823" starttime="20170605 16:39:16.375"></status>
+</kw>
+<kw name="Query" library="DatabaseLibrary">
+<doc>Uses the input `selectStatement` to query for the values that</doc>
+<arguments>
+<arg>SELECT id FROM tradelec_statements.document_type where automatically_run = 'TRUE' AND entity = 'TICKET' AND entity_subtype = 'PARKING' ORDER BY ID ASC;</arg>
+</arguments>
+<assign>
+<var>${doctypeID}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.830" level="INFO">${doctypeID} = [(1,), (2,), (3,), (4,), (15,)]</msg>
+<status status="PASS" endtime="20170605 16:39:16.830" starttime="20170605 16:39:16.824"></status>
+</kw>
+<kw name="Row Count" library="DatabaseLibrary">
+<doc>Uses the input `selectStatement` to query the database and returns</doc>
+<arguments>
+<arg>SELECT id FROM tradelec_statements.document_type where automatically_run = 'TRUE' AND entity = 'TICKET' AND entity_subtype = 'PARKING';</arg>
+</arguments>
+<assign>
+<var>${amount}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.832" level="INFO">${amount} = 5</msg>
+<status status="PASS" endtime="20170605 16:39:16.832" starttime="20170605 16:39:16.830"></status>
+</kw>
+<kw type="for" name="${i} IN RANGE [ 0 | ${amount} ]">
+<kw type="foritem" name="${i} = 0">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+<arg>${doctypeID[${i}]}</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.834" level="INFO">${Document0} = (1,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.834" starttime="20170605 16:39:16.833"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+</arguments>
+<assign>
+<var>${test}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.835" level="INFO">${test} = (1,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.835" starttime="20170605 16:39:16.834"></status>
+</kw>
+<kw name="Fetch From Left" library="String">
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${test2}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.835" level="INFO">${test2} = (1</msg>
+<status status="PASS" endtime="20170605 16:39:16.835" starttime="20170605 16:39:16.835"></status>
+</kw>
+<kw name="Fetch From Right" library="String">
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test2}</arg>
+<arg>(</arg>
+</arguments>
+<assign>
+<var>${DocumentID}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.835" level="INFO">${DocumentID} = 1</msg>
+<status status="PASS" endtime="20170605 16:39:16.835" starttime="20170605 16:39:16.835"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Het ID Document ${i} is ${DocumentID}</arg>
+</arguments>
+<status status="PASS" endtime="20170605 16:39:16.836" starttime="20170605 16:39:16.836"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Exit For Loop</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.836" level="INFO">Exit For Loop</msg>
+<status status="PASS" endtime="20170605 16:39:16.836" starttime="20170605 16:39:16.836"></status>
+</kw>
+<status status="PASS" endtime="20170605 16:39:16.836" starttime="20170605 16:39:16.833"></status>
+</kw>
+<kw type="foritem" name="${i} = 1">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+<arg>${doctypeID[${i}]}</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.838" level="INFO">${Document1} = (2,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.838" starttime="20170605 16:39:16.837"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+</arguments>
+<assign>
+<var>${test}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.838" level="INFO">${test} = (2,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.838" starttime="20170605 16:39:16.838"></status>
+</kw>
+<kw name="Fetch From Left" library="String">
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${test2}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.839" level="INFO">${test2} = (2</msg>
+<status status="PASS" endtime="20170605 16:39:16.839" starttime="20170605 16:39:16.839"></status>
+</kw>
+<kw name="Fetch From Right" library="String">
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test2}</arg>
+<arg>(</arg>
+</arguments>
+<assign>
+<var>${DocumentID}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.839" level="INFO">${DocumentID} = 2</msg>
+<status status="PASS" endtime="20170605 16:39:16.839" starttime="20170605 16:39:16.839"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Het ID Document ${i} is ${DocumentID}</arg>
+</arguments>
+<status status="PASS" endtime="20170605 16:39:16.840" starttime="20170605 16:39:16.839"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Exit For Loop</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.840" level="INFO">Exit For Loop</msg>
+<status status="PASS" endtime="20170605 16:39:16.840" starttime="20170605 16:39:16.840"></status>
+</kw>
+<status status="PASS" endtime="20170605 16:39:16.840" starttime="20170605 16:39:16.837"></status>
+</kw>
+<kw type="foritem" name="${i} = 2">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+<arg>${doctypeID[${i}]}</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.842" level="INFO">${Document2} = (3,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.843" starttime="20170605 16:39:16.840"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+</arguments>
+<assign>
+<var>${test}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.843" level="INFO">${test} = (3,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.843" starttime="20170605 16:39:16.843"></status>
+</kw>
+<kw name="Fetch From Left" library="String">
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${test2}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.844" level="INFO">${test2} = (3</msg>
+<status status="PASS" endtime="20170605 16:39:16.844" starttime="20170605 16:39:16.844"></status>
+</kw>
+<kw name="Fetch From Right" library="String">
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test2}</arg>
+<arg>(</arg>
+</arguments>
+<assign>
+<var>${DocumentID}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.845" level="INFO">${DocumentID} = 3</msg>
+<status status="PASS" endtime="20170605 16:39:16.845" starttime="20170605 16:39:16.844"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Het ID Document ${i} is ${DocumentID}</arg>
+</arguments>
+<status status="PASS" endtime="20170605 16:39:16.846" starttime="20170605 16:39:16.845"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Exit For Loop</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.847" level="INFO">Exit For Loop</msg>
+<status status="PASS" endtime="20170605 16:39:16.847" starttime="20170605 16:39:16.847"></status>
+</kw>
+<status status="PASS" endtime="20170605 16:39:16.847" starttime="20170605 16:39:16.840"></status>
+</kw>
+<kw type="foritem" name="${i} = 3">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+<arg>${doctypeID[${i}]}</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.849" level="INFO">${Document3} = (4,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.849" starttime="20170605 16:39:16.847"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+</arguments>
+<assign>
+<var>${test}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.850" level="INFO">${test} = (4,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.850" starttime="20170605 16:39:16.850"></status>
+</kw>
+<kw name="Fetch From Left" library="String">
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${test2}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.851" level="INFO">${test2} = (4</msg>
+<status status="PASS" endtime="20170605 16:39:16.851" starttime="20170605 16:39:16.851"></status>
+</kw>
+<kw name="Fetch From Right" library="String">
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test2}</arg>
+<arg>(</arg>
+</arguments>
+<assign>
+<var>${DocumentID}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.851" level="INFO">${DocumentID} = 4</msg>
+<status status="PASS" endtime="20170605 16:39:16.851" starttime="20170605 16:39:16.851"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Het ID Document ${i} is ${DocumentID}</arg>
+</arguments>
+<status status="PASS" endtime="20170605 16:39:16.852" starttime="20170605 16:39:16.852"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Exit For Loop</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.852" level="INFO">Exit For Loop</msg>
+<status status="PASS" endtime="20170605 16:39:16.852" starttime="20170605 16:39:16.852"></status>
+</kw>
+<status status="PASS" endtime="20170605 16:39:16.852" starttime="20170605 16:39:16.847"></status>
+</kw>
+<kw type="foritem" name="${i} = 4">
+<kw name="Set Test Variable" library="BuiltIn">
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+<arg>${doctypeID[${i}]}</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.854" level="INFO">${Document4} = (15,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.854" starttime="20170605 16:39:16.852"></status>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<doc>Converts the given item to a Unicode string.</doc>
+<arguments>
+<arg>${Document${i}}</arg>
+</arguments>
+<assign>
+<var>${test}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.854" level="INFO">${test} = (15,)</msg>
+<status status="PASS" endtime="20170605 16:39:16.854" starttime="20170605 16:39:16.854"></status>
+</kw>
+<kw name="Fetch From Left" library="String">
+<doc>Returns contents of the ``string`` before the first occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test}</arg>
+<arg>,</arg>
+</arguments>
+<assign>
+<var>${test2}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.854" level="INFO">${test2} = (15</msg>
+<status status="PASS" endtime="20170605 16:39:16.854" starttime="20170605 16:39:16.854"></status>
+</kw>
+<kw name="Fetch From Right" library="String">
+<doc>Returns contents of the ``string`` after the last occurrence of ``marker``.</doc>
+<arguments>
+<arg>${test2}</arg>
+<arg>(</arg>
+</arguments>
+<assign>
+<var>${DocumentID}</var>
+</assign>
+<msg timestamp="20170605 16:39:16.855" level="INFO">${DocumentID} = 15</msg>
+<status status="PASS" endtime="20170605 16:39:16.855" starttime="20170605 16:39:16.855"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Het ID Document ${i} is ${DocumentID}</arg>
+</arguments>
+<status status="PASS" endtime="20170605 16:39:16.855" starttime="20170605 16:39:16.855"></status>
+</kw>
+<kw name="Log" library="BuiltIn">
+<doc>Logs the given message with the given level.</doc>
+<arguments>
+<arg>Exit For Loop</arg>
+</arguments>
+<msg timestamp="20170605 16:39:16.856" level="INFO">Exit For Loop</msg>
+<status status="PASS" endtime="20170605 16:39:16.856" starttime="20170605 16:39:16.856"></status>
+</kw>
+<status status="PASS" endtime="20170605 16:39:16.856" starttime="20170605 16:39:16.852"></status>
+</kw>
+<status status="PASS" endtime="20170605 16:39:16.856" starttime="20170605 16:39:16.832"></status>
+</kw>
+<status status="PASS" endtime="20170605 16:39:16.856" starttime="20170605 16:39:16.374"></status>
+</kw>
+<status status="PASS" endtime="20170605 16:39:16.856" critical="yes" starttime="20170605 16:39:16.373"></status>
+</test>
+<status status="PASS" endtime="20170605 16:39:16.858" starttime="20170605 16:39:16.090"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="DocGeneration" pass="1">DocGeneration</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
